@@ -56,8 +56,8 @@ VERBS.concat('any').forEach(function(method) {
     var _this = this;
     var matcher = matcher === undefined ?  /.*/ : matcher;
 
-    function reply(code, response, headers) {
-      var handler = [matcher, body, code, response, headers];
+    function reply(code, response, headers, statusText) {
+      var handler = [matcher, body, code, response, headers, statusText];
       addHandler(method, _this.handlers, handler);
       return _this;
     }
